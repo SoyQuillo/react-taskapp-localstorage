@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
-export function TaskCreator() {
-  const [newTaskName, setNewTaskName] = useState();
+export function TaskCreator({ createNewTask }) {
+  const [newTaskName, setNewTaskName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    createNewTask(newTaskName);
     localStorage.setItem("tasks", newTaskName);
     setNewTaskName("");
   };
@@ -18,7 +19,7 @@ export function TaskCreator() {
         onChange={(e) => setNewTaskName(e.target.value)}
         value={newTaskName}
       />
-      <button onClick={() => alert(newTaskName)}>Save Task</button>
+      <button onClick={() => {}}>Save Task</button>
     </form>
   );
 }
