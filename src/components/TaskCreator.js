@@ -11,14 +11,21 @@ export function TaskCreator({ createNewTask }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Enter a new task"
-        onChange={(e) => setNewTaskName(e.target.value)}
-        value={newTaskName}
-      />
-      <button onClick={() => {}}>Save Task</button>
+    <form onSubmit={handleSubmit} className="my-2 row">
+      <div className="col-9">
+        <input
+          type="text"
+          placeholder="Enter a new task"
+          onChange={(e) => setNewTaskName(e.target.value)}
+          value={newTaskName}
+          className="form-control"
+        />
+      </div>
+      <div className="col-3">
+        <button className="btn btn-primary btn-sm " onClick={() => {}}>
+          Save Task
+        </button>
+      </div>
     </form>
   );
 }
